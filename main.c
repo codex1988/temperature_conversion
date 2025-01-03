@@ -29,27 +29,29 @@ int main(void) {
     }
   }
 
-  convert(degree, 'f');
+  convert(degree, 'c');
 
   return 0;
 }
 
 int convert(int degree[], char unit) {
   int i;
-  int t;
+  float t;
   if (unit == 'c') {
     printf("  C  =>  F\n");
     for (i = 0; i < LENGTH; ++i) {
       t = (9.0 * degree[i] / 5.0) + 32.0;
-      printf("%3d  => %3d\n", degree[i], t);
+      printf("%3d  => %3.1f\n", degree[i], t);
     }
+    putchar('\n');
     return 0;
   } else if (unit == 'f') {
     printf("  F  =>  N\n");
     for (i = 0; i < LENGTH; ++i) {
       t = (5.0 / 9.0) * (degree[i] - 32.0);
-      printf("%3d  => %3d\n", degree[i], t);
+      printf("%3d  => %3.1f\n", degree[i], t);
     }
+    putchar('\n');
     return 0;
   } else {
     printf("Invalid unit. Use \'c\' or \'f\'.\n");
